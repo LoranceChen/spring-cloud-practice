@@ -17,3 +17,6 @@ test workflow of the spring cloud mainstream component.
     
 2. run `order-app`
     - access `http://localhost:8081/myname`
+
+## Notice
+- custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
