@@ -1,0 +1,10 @@
+#spring:
+#  application:
+#     name: myconfigserver
+#  profiles:
+#     active: native
+#
+#my:
+#  property: myvalue
+
+server.port: 8888
