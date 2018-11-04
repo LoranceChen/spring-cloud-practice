@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 @ComponentScan({"controller"})
-public class Application {
+public class OrderApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(OrderApplication.class, args);
     }
 }

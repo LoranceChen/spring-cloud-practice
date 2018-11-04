@@ -1,14 +1,13 @@
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
 import org.springframework.context.annotation.Configuration;
 
 @EnableAutoConfiguration
 @Configuration
 @EnableConfigServer
-public class Application {
+public class MyConfigApplication {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(MyConfigApplication.class, args);
     }
 }

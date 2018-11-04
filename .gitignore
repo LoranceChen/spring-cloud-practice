@@ -1,4 +1,4 @@
-/target/
+target/
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -26,6 +26,7 @@
 
 # dev
 application-local.properties
+bootstrap-local.yml
 
 /logs
 
