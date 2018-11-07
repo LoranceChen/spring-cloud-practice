@@ -11,6 +11,12 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
     <groupId>test</groupId>
     <artifactId>my-cloud</artifactId>
     <packaging>pom</packaging>
@@ -45,9 +51,13 @@
         </repository>
     </repositories>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>1.8</java.version>
-    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
