@@ -26,6 +26,8 @@
         <module>my-config</module>
         <module>order-app</module>
         <module>my-eureka</module>
+        <module>my-zuul</module>
+        <module>book-app</module>
     </modules>
 
     <dependencyManagement>
