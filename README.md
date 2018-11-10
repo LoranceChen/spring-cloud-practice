@@ -22,7 +22,14 @@ test workflow of the spring cloud mainstream component.
 ### book-app
 - a spring-boot app only test zuul
 
+### my-ribbon
+- spring-cloud-netflix-ribbon
+
+### job-app
+- a spring-boot app only test ribbon
+
 ## How to Run (on IDE)
+### Config & Eureka
 1. run `my-config`
     - access `http://localhost:8888/foo/default`
 
@@ -33,11 +40,22 @@ test workflow of the spring cloud mainstream component.
     - access `http://localhost:8081/myname`
     - access `http://localhost:8081/service-instances/order_app`
 
+### Zuul
 4. run `book-app`
     - access `http://localhost:8091/available`
-    
+
 5. run `my-zuul`
     - access `http://localhost:8083/book_app/available`
+
+### Ribbon
+6. run `job-app`
+    - with default profile
+        - access `http://localhost:8092/greeting`
+    - with inst2 profile
+            - access `http://localhost:8093/greeting`
+
+7. run `my-ribbon`
+    - access `http://localhost:8084/hi`
     
 ## Notice
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
