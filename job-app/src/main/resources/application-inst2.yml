@@ -1,0 +1,6 @@
+pring:
+  application:
+    name: job_app
+
+server:
+  port: 8093

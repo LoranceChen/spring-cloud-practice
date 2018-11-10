@@ -28,6 +28,8 @@
         <module>my-eureka</module>
         <module>my-zuul</module>
         <module>book-app</module>
+        <module>my-ribbon</module>
+        <module>job-app</module>
     </modules>
 
     <dependencyManagement>
