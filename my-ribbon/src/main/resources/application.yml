@@ -2,6 +2,7 @@ spring:
   application:
     name: my_ribbon
 
+# notice: can NOT use job_app as name
 job-app:
   ribbon:
     eureka:
