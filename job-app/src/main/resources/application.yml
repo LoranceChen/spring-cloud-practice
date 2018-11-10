@@ -1,6 +1,6 @@
 pring:
   application:
-    name: job_app
+    name: job-app
 
 server:
   port: 8092
