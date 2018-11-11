@@ -28,6 +28,12 @@ test workflow of the spring cloud mainstream component.
 ### job-app
 - a spring-boot app only test ribbon
 
+### my-hystrix
+- spring-cloud-netflix-hystrix
+
+### twitter-app
+- a spring-boot app only test hystrix
+
 ## How to Run (on IDE)
 ### Config & Eureka
 1. run `my-config`
@@ -52,10 +58,17 @@ test workflow of the spring cloud mainstream component.
     - with default profile
         - access `http://localhost:8092/greeting`
     - with inst2 profile
-            - access `http://localhost:8093/greeting`
+        - access `http://localhost:8093/greeting`
 
 7. run `my-ribbon`
     - access `http://localhost:8084/hi`
+   
+### Hystrix
+8. run `twitter-app`
+    - access `http://localhost:8095/recommended`
+
+9. run `my-hystrix`
+    - access `http://localhost:8085/to-read`
     
 ## Notice
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`

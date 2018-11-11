@@ -30,6 +30,8 @@
         <module>book-app</module>
         <module>my-ribbon</module>
         <module>job-app</module>
+        <module>twitter-app</module>
+        <module>my-hystrix</module>
     </modules>
 
     <dependencyManagement>
