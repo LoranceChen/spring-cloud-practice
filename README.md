@@ -34,6 +34,13 @@ test workflow of the spring cloud mainstream component.
 ### twitter-app
 - a spring-boot app only test hystrix
 
+### my-sleuth
+- spring-cloud-sleuth
+
+### wechart-app
+- another spring-cloud-sleuth
+
+
 ## How to Run (on IDE)
 ### Config & Eureka
 1. run `my-config`
@@ -69,6 +76,16 @@ test workflow of the spring cloud mainstream component.
 
 9. run `my-hystrix`
     - access `http://localhost:8085/to-read`
+    
+### Sleuth
+10. run zipkin server by docker: `docker run -d -p 9411:9411 openzipkin/zipkin`
+    - access `http://localhost:9411/zipkin/`
+    
+11. run `my-sleuth`
+    - access `http://localhost:6060/`
+
+12. run `wechart-app`
+    - access `http://localhost:6065/wechart`
     
 ## Notice
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
