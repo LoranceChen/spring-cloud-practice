@@ -32,6 +32,8 @@
         <module>job-app</module>
         <module>twitter-app</module>
         <module>my-hystrix</module>
+        <module>my-sleuth</module>
+        <module>wechat-app</module>
     </modules>
 
     <dependencyManagement>
