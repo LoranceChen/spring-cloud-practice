@@ -1,0 +1,7 @@
+server:
+  port: 8762
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1

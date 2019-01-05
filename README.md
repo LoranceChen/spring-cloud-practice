@@ -1,6 +1,7 @@
 # Spring Cloud Practice
 test workflow of the spring cloud mainstream component.
 
+The ha-feature branch represent High Available Spring Cloud
 ## Projects / Modules
 ### my-config
 - spring-cloud-config
@@ -10,9 +11,7 @@ test workflow of the spring cloud mainstream component.
 
 ### my-eureka
 - spring-cloud-netflix-eureka
-- todo
-    - setting up multiple eureka node
-    
+
 ### order-app
 - a spring-boot app test my-config & my-eureka project
 
@@ -44,11 +43,18 @@ test workflow of the spring cloud mainstream component.
 ## How to Run (on IDE)
 ### Config & Eureka
 1. run `my-config`
-    - access `http://localhost:8888/foo/default`
+    - run profile `config1`
+        - access `http://localhost:8888/foo/default`, get `foo` properties from git repo 
+        - access `http://localhost:8888/myname`, verify git repo config
+    - run profile `config2`
+        - access `http://localhost:8889/foo/default`, get `foo` properties from git repo 
+        - access `http://localhost:8889/myname`, verify git repo config
+2. run multiple `my-eureka`
+    - run profile `peer1`
+        - access `http://localhost:8762`, eureka web dashboard
+    - run profile `peer2`
+        - access `http://localhost:8763`, eureka web dashboard
 
-2. run `my-eureka`
-    - access `http://localhost:8888/foo/default`
-        
 3. run `order-app`
     - access `http://localhost:8081/myname`
     - access `http://localhost:8081/service-instances/order_app`
@@ -89,3 +95,8 @@ test workflow of the spring cloud mainstream component.
     
 ## Notice
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
+
+## How to Manager Spring Cloud Cluster
+- 每种类型的服务分ip端口段，比如Erueka服务的范围在[8760,8770)
+- 集群启动时，先运行Config，后运行Erueka
+- Config App配置config server和client时，client会按照自身的server配置拉取自己的git config

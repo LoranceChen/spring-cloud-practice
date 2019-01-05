@@ -1,5 +1,4 @@
 spring.application.name: my_config
-spring.profiles.active: dev
 
 spring.cloud.config.server.bootstrap: true
 spring.cloud.config.server.git.uri: https://github.com/LoranceChen/spring-cloud-config-repo.git
@@ -7,3 +6,10 @@ spring.cloud.config.server.git.searchPaths: config-repo
 spring.cloud.config.server.git.skipSslValidation: true
 spring.cloud.config.server.git.timeout: 20
 spring.cloud.config.server.git.refreshRate: 30
+
+#对应前配置文件中的{profile}部分
+spring.cloud.config.profile: dev
+#对应前配置文件的git分支
+spring.cloud.config.label: master
+#配置中心的地址(自带config server 不需要配置config client的url)
+#spring.cloud.config.uri: http://localhost:8888/
