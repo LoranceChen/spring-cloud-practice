@@ -6,6 +6,7 @@
 #
 #my:
 #  property: myvalue
+server.custom_port: 8880-8889
 
 eureka:
   client:

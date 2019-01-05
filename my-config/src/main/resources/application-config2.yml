@@ -7,4 +7,4 @@
 #my:
 #  property: myvalue
 
-server.port: 8889
+#server.port: 8889

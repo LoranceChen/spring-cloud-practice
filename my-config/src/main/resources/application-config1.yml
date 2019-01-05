@@ -7,4 +7,5 @@
 #my:
 #  property: myvalue
 
-server.port: 8888
+#server.port: 8888
+#server.custom_port: 8880-8889

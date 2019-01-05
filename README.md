@@ -1,7 +1,8 @@
 # Spring Cloud Practice
 test workflow of the spring cloud mainstream component.
 
-The ha-feature branch represent High Available Spring Cloud
+The ha-feature branch represent High Available Spring Cloud.
+
 ## Projects / Modules
 ### my-config
 - spring-cloud-config
@@ -100,3 +101,8 @@ The ha-feature branch represent High Available Spring Cloud
 - 每种类型的服务分ip端口段，比如Erueka服务的范围在[8760,8770)
 - 集群启动时，先运行Config，后运行Erueka
 - Config App配置config server和client时，client会按照自身的server配置拉取自己的git config
+- ？？同一个类型的App启动时，如何定义不同的配置，如启动端口？
+    - 配置范围可用端口，如my_config的端口使用[8880. 8889)
+
+## Other Resource
+- [eureka Rest operation](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
