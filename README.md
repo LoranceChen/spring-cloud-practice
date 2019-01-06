@@ -57,8 +57,8 @@ The ha-feature branch represent High Available Spring Cloud.
         - access `http://localhost:8763`, eureka web dashboard
 
 3. run `order-app`
-    - access `http://localhost:8081/myname`
-    - access `http://localhost:8081/service-instances/order_app`
+    - access `http://localhost:<port>/myname`, verify git repo config
+    - access `http://localhost:<port>/service-instances/order_app`, eureka register information
 
 ### Zuul
 4. run `book-app`
@@ -103,7 +103,11 @@ The ha-feature branch represent High Available Spring Cloud.
 - Config App配置config server和client时，client会按照自身的server配置拉取自己的git config
 - 同一个类型的App启动时，应该有相同的规则，不需要在逻辑上做区分
     - 可能会定义不同的配置，如启动端口。通过配置范围可用端口，如my_config的端口使用[8880. 8889)实现逻辑上不区分
-
+- App的配置需要强制使用Spring Config Server，如果连接失败则程序启动失败
+  - https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#config-client-fail-fast
+  - https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#config-client-retry
+- Eureka Client的Zone相关配置需要放在bootstrap文件中
+  
 ## Other Resource
 - [eureka Rest operation](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
 -  random port
