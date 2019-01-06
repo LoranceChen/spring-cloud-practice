@@ -7,10 +7,3 @@
 #my:
 #  property: myvalue
 server.custom_port: 8880-8889
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
-  instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
