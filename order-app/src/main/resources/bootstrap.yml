@@ -6,3 +6,9 @@ spring.cloud.config.profile: dev
 spring.cloud.config.label: master
 #配置中心的地址
 spring.cloud.config.uri: http://localhost:8888/
+
+# https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#config-client-fail-fast
+spring:
+  cloud:
+    config:
+      fail-fast=true:

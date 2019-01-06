@@ -3,6 +3,7 @@ package myconfig.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.server.ConfigurableWebServerFactory;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 import org.springframework.util.SocketUtils;
 
@@ -10,6 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@RefreshScope
 @Component
 public class PickPortConfig
         implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
@@ -20,7 +22,9 @@ public class PickPortConfig
     public void customize(ConfigurableWebServerFactory factory) {
         System.out.println("customPortRange - " + customPortRange);
         String[] split = customPortRange.split("-");
-        int availablePort = getAvailablePort(Arrays.stream(split).map(Integer::valueOf).collect(Collectors.toList()));
+        Integer availablePort = getAvailablePort(Arrays.stream(split).map(Integer::valueOf).collect(Collectors.toList()));
+        System.setProperty("server.port", String.valueOf(availablePort));
+
         factory.setPort(availablePort);
     }
 
@@ -30,4 +34,5 @@ public class PickPortConfig
         }
         return SocketUtils.findAvailableTcpPort(portRange.get(0), portRange.get(1));
     }
+
 }

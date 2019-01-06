@@ -101,8 +101,15 @@ The ha-feature branch represent High Available Spring Cloud.
 - 每种类型的服务分ip端口段，比如Erueka服务的范围在[8760,8770)
 - 集群启动时，先运行Config，后运行Erueka
 - Config App配置config server和client时，client会按照自身的server配置拉取自己的git config
-- ？？同一个类型的App启动时，如何定义不同的配置，如启动端口？
-    - 配置范围可用端口，如my_config的端口使用[8880. 8889)
+- 同一个类型的App启动时，应该有相同的规则，不需要在逻辑上做区分
+    - 可能会定义不同的配置，如启动端口。通过配置范围可用端口，如my_config的端口使用[8880. 8889)实现逻辑上不区分
 
 ## Other Resource
 - [eureka Rest operation](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
+-  random port
+    - http://igormadjeric.blogspot.com/2017/06/running-spring-boot-web-app-on-random.html
+    - https://www.baeldung.com/spring-boot-change-port
+- [modify Config Server save default path](https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_server.html#_version_control_backend_filesystem_use)
+- Config with Erueka
+    - https://stackoverflow.com/a/49938548/4887726 
+    - https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#discovery-first-bootstrap
