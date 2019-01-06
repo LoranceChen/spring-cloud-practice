@@ -98,6 +98,7 @@ The ha-feature branch represent High Available Spring Cloud.
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
 
 ## How to Manager Spring Cloud Cluster
+- 启动顺序：Erueka服务优先启动，Config Server服务第二启动
 - 每种类型的服务分ip端口段，比如~~Erueka服务的范围在[8760,8770)~~ ConfigServer的服务范围配置在8880-8889
     - Erueka服务注册需要手动设定端口，并且分别启动。
 - 集群启动时，先运行Config，后运行Erueka
