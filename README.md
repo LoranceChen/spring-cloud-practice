@@ -45,11 +45,11 @@ The ha-feature branch represent High Available Spring Cloud.
 ### Config & Eureka
 1. run `my-config`
     - run profile `config1`
-        - access `http://localhost:8888/foo/default`, get `foo` properties from git repo 
-        - access `http://localhost:8888/myname`, verify git repo config
+        - access `http://localhost:<port>/foo/default`, get `foo` properties from git repo 
+        - access `http://localhost:<port>/myname`, verify git repo config
     - run profile `config2`
-        - access `http://localhost:8889/foo/default`, get `foo` properties from git repo 
-        - access `http://localhost:8889/myname`, verify git repo config
+        - access `http://localhost:<port>/foo/default`, get `foo` properties from git repo 
+        - access `http://localhost:<port>/myname`, verify git repo config
 2. run multiple `my-eureka`
     - run profile `peer1`
         - access `http://localhost:8762`, eureka web dashboard
