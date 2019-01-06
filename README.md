@@ -1,5 +1,7 @@
 # Spring Cloud Practice
-test workflow of the spring cloud mainstream component.
+test workflow of the spring cloud mainstream component.  
+
+See [ha-feature](https://github.com/LoranceChen/spring-cloud-practice/tree/ha-feature) git branch for Full Spring Cloud Cluster practice.
 
 ## Projects / Modules
 ### my-config
