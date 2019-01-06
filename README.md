@@ -98,7 +98,7 @@ The ha-feature branch represent High Available Spring Cloud.
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
 
 ## How to Manager Spring Cloud Cluster
-- 每种类型的服务分ip端口段，比如~~Erueka服务的范围在[8760,8770)~~ConfigServer的服务范围配置在[8880-8889]
+- 每种类型的服务分ip端口段，比如~~Erueka服务的范围在[8760,8770)~~ ConfigServer的服务范围配置在8880-8889
     - Erueka服务注册需要手动设定端口，并且分别启动。
 - 集群启动时，先运行Config，后运行Erueka
 - Config App配置config server和client时，client会按照自身的server配置拉取自己的git config
