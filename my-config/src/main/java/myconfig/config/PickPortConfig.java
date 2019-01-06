@@ -19,6 +19,7 @@ public class PickPortConfig
     @Value("${server.custom_port}")
     String customPortRange;
 
+    // todo：use a ensure Server Property init hook to reset server.port
     public void customize(ConfigurableWebServerFactory factory) {
         System.out.println("customPortRange - " + customPortRange);
         String[] split = customPortRange.split("-");
