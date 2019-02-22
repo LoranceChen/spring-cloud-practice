@@ -17,4 +17,10 @@ public class ConfigAppController {
         return this.myname;
 
     }
+
+    @GetMapping("/")
+    public String from2() {
+        return "asd";
+
+    }
 }

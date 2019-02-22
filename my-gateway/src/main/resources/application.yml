@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: myRouteA
+          uri: http://localhost:8081
+          predicates:
+            - Path=/order_app_http/**
+          filters:
+            - StripPrefix=1
+        - id: myRouteB
+          uri: lb://order_app
+          predicates:
+            - Path=/order_app_lb/**
+          filters:
+            - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+        httpclient:
+          ssl:
+            useInsecureTrustManager: false
+server:
+  port: 7082
+
