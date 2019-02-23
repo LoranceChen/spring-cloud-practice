@@ -19,6 +19,9 @@ The ha-feature branch represent High Available Spring Cloud.
 ### my-zuul
 - spring-cloud-netflix-zuul
 
+### my-gateway
+- spring-cloud-gateway
+
 ### book-app
 - a spring-boot app only test zuul
 
@@ -59,6 +62,10 @@ The ha-feature branch represent High Available Spring Cloud.
 3. run `order-app`
     - access `http://localhost:<port>/myname`, verify git repo config
     - access `http://localhost:<port>/service-instances/order_app`, eureka register information
+
+### Gateway
+- run `my-gateway`
+    - access `http://localhost:7082/order-app/myname`, forward to `order-app` application
 
 ### Zuul
 4. run `book-app`
