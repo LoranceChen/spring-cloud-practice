@@ -108,7 +108,6 @@ The ha-feature branch represent High Available Spring Cloud.
 - 启动顺序：Erueka服务优先启动，Config Server服务第二启动
 - 每种类型的服务分ip端口段，比如~~Erueka服务的范围在[8760,8770)~~ ConfigServer的服务范围配置在8880-8889
     - Erueka服务注册需要手动设定端口，并且分别启动。
-- 集群启动时，先运行Config，后运行Erueka
 - Config App配置config server和client时，client会按照自身的server配置拉取自己的git config
 - 同一个类型的App启动时，应该有相同的规则，不需要在逻辑上做区分
     - 可能会定义不同的配置，如启动端口。通过配置范围可用端口，如my_config的端口使用[8880. 8889)实现逻辑上不区分
@@ -118,7 +117,7 @@ The ha-feature branch represent High Available Spring Cloud.
 - Eureka Client的Zone相关配置需要放在bootstrap文件中
 
 ## Good Practice
-- use URI host as application name.
+- use URI format as application name.
 
 ## Other Resource
 - [eureka Rest operation](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
