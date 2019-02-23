@@ -35,6 +35,8 @@
         <module>my-sleuth</module>
         <module>wechat-app</module>
         <module>my-gateway</module>
+        <module>spring-cloud-producer</module>
+
     </modules>
 
 
