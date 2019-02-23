@@ -109,7 +109,10 @@ The ha-feature branch represent High Available Spring Cloud.
   - https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#config-client-fail-fast
   - https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#config-client-retry
 - Eureka Client的Zone相关配置需要放在bootstrap文件中
-  
+
+## Good Practice
+- use URI host as application name.
+
 ## Other Resource
 - [eureka Rest operation](https://github.com/Netflix/eureka/wiki/Eureka-REST-operations)
 -  random port

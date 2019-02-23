@@ -1,5 +1,5 @@
 #对应前配置文件中的{application}部分
-spring.application.name: order_app
+spring.application.name: order.app
 #对应前配置文件中的{profile}部分
 spring.cloud.config.profile: dev
 #对应前配置文件的git分支
