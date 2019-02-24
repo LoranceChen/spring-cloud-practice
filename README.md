@@ -74,6 +74,10 @@ The ha-feature branch represent High Available Spring Cloud.
 5. run `my-zuul`
     - access `http://localhost:8083/book_app/available`
 
+### Fegin
+my-fegin Module dependence order-app module  
+- run `my-fegin`
+    - access `http://localhost:6081/order-name`
 ### Ribbon
 6. run `job-app`
     - with default profile

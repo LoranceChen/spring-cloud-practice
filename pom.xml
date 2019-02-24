@@ -35,6 +35,7 @@
         <module>my-sleuth</module>
         <module>wechat-app</module>
         <module>my-gateway</module>
+        <module>my-fegin</module>
 
     </modules>
 
