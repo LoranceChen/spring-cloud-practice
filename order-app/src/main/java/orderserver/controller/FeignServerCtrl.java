@@ -4,10 +4,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * for my-fegin app test.
+ * for my-feign app test.
  */
 @RestController
-public class FeginServerCtrl {
+public class FeignServerCtrl {
     public static class SomeData {
         String name;
         Integer age;

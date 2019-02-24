@@ -1,6 +1,6 @@
-package myfegin.controller;
+package myfeign.controller;
 
-import myfegin.service.FeginClient;
+import myfeign.service.FeignClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    FeginClient feginClient;
+    FeignClient feignClient;
 
     @GetMapping("/order-name")
     public String test() {
-        return feginClient.getOrderAppName();
+        return feignClient.getOrderAppName();
     }
 
     @GetMapping("/order-some-data")
-    public FeginClient.SomeData someData() {
-        return feginClient.getOrderSomeData();
+    public FeignClient.SomeData someData() {
+        return feignClient.getOrderSomeData();
     }
 }
