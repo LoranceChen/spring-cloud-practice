@@ -1,4 +1,6 @@
-server.port: 6091
+#server.port: 6091
+server.custom_port: 6091-6099
+
 feign:
   hystrix:
     enabled: true
