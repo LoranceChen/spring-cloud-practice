@@ -2,3 +2,7 @@ server.port: 6091
 feign:
   hystrix:
     enabled: true
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
