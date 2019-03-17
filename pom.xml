@@ -35,8 +35,8 @@
         <module>my-sleuth</module>
         <module>wechat-app</module>
         <module>my-gateway</module>
-        <module>my-feign</module>
-
+        <module>my-feign-consumer</module>
+        <module>my-feign-providor-union</module>
     </modules>
 
 
@@ -57,6 +57,7 @@
         <!--</repository>-->
     </repositories>
 
+    <!--todo remove plugins-->
     <build>
         <plugins>
             <plugin>

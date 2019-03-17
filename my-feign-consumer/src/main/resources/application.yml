@@ -1,0 +1,4 @@
+server.port: 6101
+feign:
+  hystrix:
+    enabled: true

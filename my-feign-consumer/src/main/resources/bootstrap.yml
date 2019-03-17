@@ -1,0 +1,24 @@
+#对应前配置文件中的{application}部分
+spring.application.name: myfeigconsumer.app
+#对应前配置文件中的{profile}部分
+spring.cloud.config.profile: dev
+#对应前配置文件的git分支
+spring.cloud.config.label: master
+#配置中心的地址
+#spring.cloud.config.uri: http://my_config
+
+# https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#config-client-fail-fast
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        serviceId: my_config
+      fail-fast: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
+  instance:
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}

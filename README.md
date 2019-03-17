@@ -19,7 +19,7 @@ The ha-feature branch represent High Available Spring Cloud.
 ### my-zuul
 - spring-cloud-netflix-zuul
 
-### my-feign
+### my-feign-provider-union & my-feign-consumer
 - spring-cloud-openfeign
 
 ### my-gateway
@@ -78,9 +78,11 @@ The ha-feature branch represent High Available Spring Cloud.
     - access `http://localhost:8083/book_app/available`
 
 ### Feign
-my-feign Module dependence order-app module  
-- run `my-feign`
-    - access `http://localhost:6081/order-name`
+- run `my-feign-providor-union-app`
+    - access `http://localhost:6091/feign-union-name` to verify API provider is UP
+- run `my-feign-consumer`
+    - access `http://localhost:6101/consumer-provider-info`
+    
 ### Ribbon
 6. run `job-app`
     - with default profile

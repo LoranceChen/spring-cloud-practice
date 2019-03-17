@@ -17,6 +17,7 @@ spring.cloud.config.label: master
 eureka:
   client:
     serviceUrl:
+      zone-1: http://peer1:8762/eureka/,http://peer2:8763/eureka/
       defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
   instance:
     instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
