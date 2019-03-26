@@ -1,0 +1,9 @@
+server:
+  port: 3301
+spring:
+  application:
+    name: mysidecar
+
+sidecar:
+  port: 3201
+  health-uri: http://localhost:3201/health.json

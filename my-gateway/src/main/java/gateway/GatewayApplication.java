@@ -15,9 +15,14 @@ public class GatewayApplication {
 	@Bean
 	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
 		return builder.routes()
+				//order app
 				.route("path_order", r -> r.path("/order-app/**")
 						.filters(f -> f.stripPrefix(1))
-				.uri("lb://order.app"))
+						.uri("lb://order.app"))
+				// sidecar app
+				.route("path_sidecar_app", r -> r.path("/sidecar-app/**")
+						.filters(f -> f.stripPrefix(1))
+						.uri("lb://mysidecar"))
 				.build();
 	}
 
