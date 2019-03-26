@@ -1,0 +1,13 @@
+eureka:
+  client:
+    serviceUrl:
+      shanghai-blue: http://peer1:8762/eureka/
+      shanghai-green: http://peer2:8763/eureka/
+    region: shanghai
+    availability-zones:
+      shanghai: shanghai-green,shanghai-blue
+  instance:
+    metadata-map:
+      zone: shanghai-blue
+
+my-region: blue

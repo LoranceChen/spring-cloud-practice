@@ -1,5 +1,5 @@
 #server.port: 6101
-server.custom_port: 6101-6109
+server.custom_port: 6101-6119
 
 feign:
   hystrix:

@@ -5,5 +5,7 @@ eureka:
     region: shanghai-green
     availability-zones:
       shanghai-green: shanghai
-
+#  instance:
+#    metadataMap:
+#      zone: shanghai-blue
 my-region: green

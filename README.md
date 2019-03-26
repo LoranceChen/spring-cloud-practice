@@ -46,7 +46,9 @@ The ha-feature branch represent High Available Spring Cloud.
 ### wechart-app
 - another spring-cloud-sleuth
 
-
+### sidecar
+- verify non-jvm integrate to Spring Cloud
+ 
 ## How to Run (on IDE)
 ### Config & Eureka
 1. run `my-config`
@@ -110,6 +112,15 @@ The ha-feature branch represent High Available Spring Cloud.
 12. run `wechart-app`
     - access `http://localhost:6065/wechart`
     
+### Sidecar
+- run `sidecar-app`(without eureka) as Non-JVM
+- run `my-sidecar`
+- run `my-gateway`
+    - access `http://localhost:3201/sidecar-app/hello` //access Non-JVM app from outside
+- run `order-app`
+
+- access `http://localhost:3301/order.app/myname` //access jvm app from Non-JVM app
+
 ## Notice
 - custom config Git repo by fork `https://github.com/LoranceChen/spring-cloud-config-repo.git`
 
@@ -137,3 +148,29 @@ The ha-feature branch represent High Available Spring Cloud.
 - Config with Erueka
     - https://stackoverflow.com/a/49938548/4887726 
     - https://cloud.spring.io/spring-cloud-config/multi/multi__spring_cloud_config_client.html#discovery-first-bootstrap
+
+## Blue Green Test
+- use MyFeignProviderUnion and MyFeignConsumer module test default region based Eureka & Ribbon LB strategy
+    - conclusion: Ribbon first use same region 
+    - ?? 当设置不同的zone时
+        - 并且依赖的服务有相同的zone那么客户端会调用这个相同的zone，但是，如果这时候依赖的zone服务挂了，那么
+        当前的服务就一直获取不到。
+        - 如果依赖的服务没有相同的zone，那么客户端会直接选择不同的zone
+    - Eureka测试
+       1. 不同的zone
+            1）先启动后断开：等下次同步eureka时，自动切换到另一个zone
+            2）不启动相同的zone：启动时会使用不同的zone
+       2. 不同的region
+            无效，无法限制
+       3. zone的region都不同
+    - Eureka的不同环境配置方案
+        - [自定义环境配置变量](https://github.com/Netflix/eureka/wiki/Overriding-Default-Configurations)
+        
+## 优化
+- 使用消息中间件实时推送eureka的变更，尤其是生产部署相关的东西。
+    - 目标
+        - 运维的实时更新
+        - 更新各个服务模块需要同步的信息，不要全量同步
+    - 方案
+        - 查看Eureka Server是否有相关的hook代码可以注入。
+        - 二次源码上的开发

@@ -37,6 +37,8 @@
         <module>my-gateway</module>
         <module>my-feign-consumer</module>
         <module>my-feign-providor-union</module>
+        <module>my-sidecar</module>
+        <module>sidecar-app</module>
     </modules>
 
 

@@ -7,6 +7,8 @@
 #logging.level.com.netflix.discovery=OFF
 
 eureka:
+  server:
+    response-cache-update-interval-ms: 5 # only test
   client:
     serviceUrl:
       defaultZone: http://peer1:8762/eureka/,http://peer2:8763/eureka/
