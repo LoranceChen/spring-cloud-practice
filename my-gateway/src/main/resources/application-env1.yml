@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    metadata-map:
+      env: env1
+server:
+  port: 7082

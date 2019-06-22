@@ -1,5 +1,6 @@
 package myfeignconsumer.controller;
 
+import myfeignconsumer.feign.user.UserBasicApi;
 import myfeignunion.api.FeignUnionBean;
 //import myfeignunion.api.IFeignUnionApis;
 import myfeignunion.api.IFeignUnionBasic;
@@ -22,7 +23,7 @@ public class MyFeginConsumerController {
     IFeignUnionUser feignUnionUser;
 
     @Autowired
-    IFeignUnionBasic feignUnionBasic;
+    UserBasicApi feignUnionBasic;
 
     @PostMapping("/consumer-provider-info")
     public String consumerProviderInfo() {

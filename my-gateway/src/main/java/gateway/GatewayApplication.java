@@ -23,6 +23,9 @@ public class GatewayApplication {
 				.route("path_sidecar_app", r -> r.path("/sidecar-app/**")
 						.filters(f -> f.stripPrefix(1))
 						.uri("lb://mysidecar"))
+				.route("path_union_providor", r -> r.path("/feign_providor_union/**")
+						.filters(f -> f.stripPrefix(1))
+						.uri("lb://myfeignunion.app"))
 				.build();
 	}
 

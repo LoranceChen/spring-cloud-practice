@@ -39,6 +39,12 @@
         <module>my-feign-providor-union</module>
         <module>my-sidecar</module>
         <module>sidecar-app</module>
+        <module>gray-app</module>
+        <module>my-feign-reactive</module>
+        <module>myfeignreactcustomer</module>
+        <module>myrsocket</module>
+        <module>my-stream</module>
+        <module>my-webflux</module>
     </modules>
 
 
@@ -75,7 +81,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RELEASE</version>
+                <version>Greenwich.SR1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

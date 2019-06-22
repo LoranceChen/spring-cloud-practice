@@ -26,6 +26,4 @@ spring:
         httpclient:
           ssl:
             useInsecureTrustManager: false
-server:
-  port: 7082
 

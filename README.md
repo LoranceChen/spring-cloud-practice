@@ -174,3 +174,18 @@ The ha-feature branch represent High Available Spring Cloud.
     - 方案
         - 查看Eureka Server是否有相关的hook代码可以注入。
         - 二次源码上的开发
+- ribbon灰度发布支持
+    - ribbon中获取Header中的灰度：
+        - 借助sleuth的spanId，记录Http相关的信息到ConcurrentHashMap中，在Ribbon的choose方法中，
+        获取该spanId，然后从HashMap获取关联的信息，返回一个Ribbon需要Server。
+    - 确认部署灰度服务的app在依赖的服务中已经被识别。
+    eureka和ribbon存在延迟，当灰度服务实例上线后，需要几分钟的时间才能同步，但是我们期望界面上能够看到灰度实例
+    确实被ribbon识别到了。
+        - 因为我们发布灰度时，知道发布了几个灰度实例。通过在ribbon客户端中确认该服务识别的灰度来验证。
+    - 管理界面的支持
+        - 灰度环境的每个实例通过图形的形式展示，并且按照不同的环境标签进行分组。
+- 新的灰度库
+    - 通过MQ推送实时数据的方式，实现实时同步变更注册信息
+    
+- todo灰度 
+    - Header上添加Version，将Header传递到Eureka中
